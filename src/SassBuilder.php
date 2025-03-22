@@ -78,7 +78,7 @@ class SassBuilder
         $pathSplit = explode('/', $pathinfo['dirname']);
         $directoryName = $pathSplit[count($pathSplit) - 1];
         
-        return $outputDirectory.'/'.$fileName.'.output.css';
+        return $outputDirectory.'/'.$directoryName.'-'.$fileName.'.output.css';
     }
 
     public function runBuild(bool $watch): Process
