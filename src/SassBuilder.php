@@ -74,7 +74,10 @@ class SassBuilder
     public static function guessCssNameFromSassFile(string $sassFile, string $outputDirectory): string
     {
         $fileName = basename($sassFile, '.scss');
-
+        $pathinfo = pathinfo($sassFile);
+        $pathSplit = explode('/', $pathinfo['dirname']);
+        $directoryName = $pathSplit[count($pathSplit) - 1];
+        
         return $outputDirectory.'/'.$fileName.'.output.css';
     }
 
